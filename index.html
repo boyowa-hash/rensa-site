@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rensa — coming soon</title>
+<meta name="description" content="Rensa: waterless, fragrance-free skincare and home fragrance, made in London by Stennah &amp; Hope. A small first pour of candles arrives before Christmas.">
+<meta property="og:title" content="Rensa — coming soon">
+<meta property="og:description" content="Less on your skin. Better in your home. A small first pour of candles arrives before Christmas.">
+<meta property="og:url" content="https://rensa.uk/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14100D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter+Tight:wght@300;400;500&display=swap">
+<style>
+  /* ---------- Rensa holding page ---------- */
+  :root{
+    --ground:#14100D; --ink:#EDE6DC; --ink-soft:#D9CFC2; --muted:#A89C8E; --body:#B8AC9E;
+    --faint:#8C8174; --line:#2E2620; --line-strong:#4A4038; --underline:#5E544A;
+    --accent:#C8925A; --glow:#C8925A;
+    --beat:1.111s; /* 54 bpm */
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter Tight', system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--muted)} a:hover{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .pad{padding-inline:clamp(24px,5vw,72px)}
+  .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .serif{font-family:var(--serif)}
+
+  /* hero */
+  .hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;padding-block:40px}
+  .glow{position:absolute;left:50%;top:46%;width:min(1100px,160vw);height:min(1100px,160vw);border-radius:50%;
+    background:radial-gradient(circle,var(--glow) 0%,rgba(20,16,13,0) 62%);opacity:.36;pointer-events:none;
+    transform:translate(-50%,-50%);animation:heartbeat var(--beat) ease-out infinite}
+  @keyframes heartbeat{
+    0%{opacity:.30;transform:translate(-50%,-50%) scale(1)}
+    9%{opacity:.50;transform:translate(-50%,-50%) scale(1.06)}
+    18%{opacity:.36;transform:translate(-50%,-50%) scale(1.015)}
+    28%{opacity:.46;transform:translate(-50%,-50%) scale(1.045)}
+    46%,100%{opacity:.30;transform:translate(-50%,-50%) scale(1)}
+  }
+  @media (prefers-reduced-motion:reduce){.glow{animation:none}html{scroll-behavior:auto}}
+  .topbar{position:relative;display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .hero-main{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-block:64px}
+  h1{margin:0 -.32em 0 0;font-family:var(--serif);font-weight:300;font-size:clamp(64px,12vw,168px);line-height:.9;letter-spacing:.32em}
+  .definition{margin:40px 0 0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(20px,2.2vw,26px);line-height:1.4;color:var(--ink-soft)}
+  .definition span{font-style:normal;font-size:.8em;color:var(--muted)}
+  .tag{margin:28px 0 0;max-width:420px;font-size:15px;font-weight:300;line-height:1.7;color:var(--muted)}
+  .scroll{position:relative;display:flex;justify-content:center}
+  .scroll a{display:inline-flex;flex-direction:column;align-items:center;gap:12px;min-height:44px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none}
+  .scroll a::after{content:"";display:block;width:1px;height:36px;background:var(--underline)}
+
+  /* sections */
+  section.block{border-top:1px solid var(--line);padding-block:clamp(80px,12vw,160px)}
+  .why{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+  .why .eyebrow{color:var(--accent)}
+  h2{margin:0;font-family:var(--serif);font-weight:300;line-height:1.15}
+  .why h2{font-size:clamp(32px,4.4vw,54px)}
+  .why p.body{margin:0;font-size:17px;font-weight:300;line-height:1.8;color:var(--body)}
+  .why .sign{margin:8px 0 0;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--muted)}
+
+  .coming{max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+  .coming-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+  .coming h2{font-size:clamp(32px,4vw,48px);line-height:1.1}
+  .cards{display:flex;flex-wrap:wrap;gap:24px}
+  .card{flex:1 1 280px;min-width:0;border-top:1px solid var(--line-strong);padding-top:28px;display:flex;flex-direction:column;gap:16px}
+  .card.first{border-top-color:var(--accent)}
+  .card-meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .numeral{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted)}
+  .first .numeral{color:var(--accent)}
+  .when{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .first .when{color:var(--ink)}
+  h3{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.15}
+  .card p{margin:0;font-size:15px;font-weight:300;line-height:1.7;color:var(--muted)}
+
+  .list{max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .list h2{font-size:clamp(36px,4.6vw,56px);line-height:1.1}
+  .list .lead{margin:20px 0 0;font-size:15px;font-weight:300;line-height:1.7;color:var(--muted)}
+  form{margin-top:44px;width:100%;display:flex;flex-direction:column;gap:32px;text-align:left}
+  fieldset{margin:0;padding:0;border:0}
+  legend{padding:0;margin-bottom:14px}
+  .checks{display:flex;flex-wrap:wrap;gap:12px 28px}
+  .checks label{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:15px;font-weight:300;color:var(--ink);cursor:pointer}
+  .checks input{accent-color:var(--accent);width:18px;height:18px;margin:0}
+  .row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px}
+  .field{flex:1 1 240px;display:flex;flex-direction:column;gap:8px}
+  input[type=email]{width:100%;height:48px;padding:0 2px;background:transparent;border:0;border-bottom:1px solid var(--underline);border-radius:0;color:var(--ink);font:300 16px var(--sans)}
+  input[type=email]::placeholder{color:#7D7266}
+  input[type=email]:focus{outline:none;border-bottom-color:var(--ink)}
+  button{flex:0 0 auto;height:48px;padding:0 28px;background:var(--ink);color:var(--ground);border:0;border-radius:0;font:500 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;cursor:pointer}
+  button:hover{background:#fff}
+  button[disabled]{opacity:.6;cursor:progress}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .fine{margin:20px 0 0;font-size:12px;line-height:1.6;color:var(--faint)}
+  .error{margin:16px 0 0;font-size:13px;color:#E3A08A;min-height:1em}
+  .thanks{margin-top:44px;display:none;flex-direction:column;align-items:center;gap:12px}
+  .thanks::before{content:"";display:block;width:1px;height:40px;background:var(--accent)}
+  .thanks .big{margin:0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:28px;line-height:1.3}
+  .thanks .small{margin:0;font-size:14px;font-weight:300;line-height:1.7;color:var(--muted)}
+  .done form,.done .fine{display:none}
+  .done .thanks{display:flex}
+
+  footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-block:32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+  footer a{color:var(--faint);text-decoration:none} footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main>
+
+  <section class="hero pad">
+    <div class="glow" aria-hidden="true"></div>
+    <header class="topbar"><span>London</span><span>Winter 2026</span></header>
+    <div class="hero-main">
+      <h1>RENSA</h1>
+      <p class="definition">rensa <span>(v.)</span> — to clear; to make clean again.</p>
+      <p class="tag">Less on your skin. Better in your home.</p>
+    </div>
+    <div class="scroll"><a href="#why">What is Rensa</a></div>
+  </section>
+
+  <section id="why" class="block pad">
+    <div class="why">
+      <p class="eyebrow">Why Rensa</p>
+      <h2>Your skin should be left alone. Your home should not.</h2>
+      <p class="body">So Rensa does two things and keeps them apart. Skincare made without water and without fragrance: nothing added that your skin did not ask for. And home fragrance made in England, for the rooms you actually live in.</p>
+      <p class="body">Scent belongs in the room, not on you. That is the whole idea.</p>
+      <p class="sign">Made in London by Stennah &amp; Hope.</p>
+    </div>
+  </section>
+
+  <section class="block pad">
+    <div class="coming">
+      <div class="coming-head">
+        <h2>What is coming</h2>
+        <p class="eyebrow" style="margin:0">Three, in order</p>
+      </div>
+      <div class="cards">
+        <article class="card first">
+          <div class="card-meta"><span class="numeral">I.</span><span class="when">Christmas 2026</span></div>
+          <h3>The first pour</h3>
+          <p>A small edition of candles, poured in London and ready before Christmas.</p>
+        </article>
+        <article class="card">
+          <div class="card-meta"><span class="numeral">II.</span><span class="when">Coming next</span></div>
+          <h3>The ceramic</h3>
+          <p>A scented ceramic object for the home, made in England. Scent without a flame.</p>
+        </article>
+        <article class="card">
+          <div class="card-meta"><span class="numeral">III.</span><span class="when">Coming next</span></div>
+          <h3>Skin</h3>
+          <p>Waterless, fragrance-free skincare. Concentrated, and nothing your skin does not need.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="list" class="block pad">
+    <div class="list" id="list-inner">
+      <h2>Hear first.</h2>
+      <p class="lead">Join the list and we will tell you when each one is ready, starting with the candles.</p>
+
+      <form id="signup" novalidate>
+        <fieldset>
+          <legend class="eyebrow">Tell me about</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="interest" value="Candles" checked> Candles</label>
+            <label><input type="checkbox" name="interest" value="Ceramic"> The ceramic</label>
+            <label><input type="checkbox" name="interest" value="Skin"> Skin</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="field">
+            <label for="email" class="eyebrow">Email address</label>
+            <input id="email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <button type="submit" id="submit">Join the list</button>
+        </div>
+        <!-- spam trap: real people never see or fill this -->
+        <div class="hp" aria-hidden="true"><label>Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      </form>
+      <p class="error" id="error" role="alert"></p>
+      <p class="fine">Only launch news. Unsubscribe any time. <a href="/privacy.html">Privacy</a></p>
+
+      <div class="thanks" role="status">
+        <p class="big">You are on the list.</p>
+        <p class="small">We will write when the first candles are poured.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pad">
+    <span>Made in London by Stennah &amp; Hope</span>
+    <span><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; rensa.uk</span>
+  </footer>
+</main>
+
+<script>
+/* ---------- Sign-up wiring ----------
+   Sign-ups go to a private Google Sheet via a Google Apps Script web app.
+   Paste the web app URL (ends in /exec) between the quotes below.      */
+const SIGNUP_URL = "";
+
+(function(){
+  const form = document.getElementById('signup');
+  const wrap = document.getElementById('list-inner');
+  const err  = document.getElementById('error');
+  const btn  = document.getElementById('submit');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    err.textContent = '';
+    const email = form.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; form.email.focus(); return; }
+    if (form.website.value) { wrap.classList.add('done'); return; } // bot
+
+    if (!SIGNUP_URL) { // never pretend to save when nothing is connected
+      err.textContent = 'The list opens in a moment. Please check back shortly.';
+      return;
+    }
+
+    const interests = Array.from(form.querySelectorAll('input[name=interest]:checked')).map(i => i.value).join(', ');
+    const body = new URLSearchParams({ email: email, interests: interests, website: form.website.value });
+
+    btn.disabled = true; btn.textContent = 'Joining…';
+    try {
+      // Google Apps Script does not send CORS headers, so the response is opaque;
+      // a network failure still throws and is reported below.
+      await fetch(SIGNUP_URL, { method: 'POST', mode: 'no-cors', body: body });
+      wrap.classList.add('done');
+    } catch (x) {
+      err.textContent = 'Something went wrong. Please try again in a moment.';
+      btn.disabled = false; btn.textContent = 'Join the list';
+    }
+  });
+})();
+</script>
+</body>
+</html>
