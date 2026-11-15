@@ -228,9 +228,9 @@ const SIGNUP_URL = "https://script.google.com/macros/s/AKfycbx1EvjJll8mwVqj96N4F
 
     btn.disabled = true; btn.textContent = 'Joining…';
     try {
-      // Google Apps Script does not send CORS headers, so the response is opaque;
-      // a network failure still throws and is reported below.
-      await fetch(SIGNUP_URL, { method: 'POST', mode: 'no-cors', body: body });
+      const res = await fetch(SIGNUP_URL, { method: 'POST', body: body });
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.message || 'not saved');
       wrap.classList.add('done');
     } catch (x) {
       err.textContent = 'Something went wrong. Please try again in a moment.';
